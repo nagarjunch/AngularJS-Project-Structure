@@ -1,0 +1,10 @@
+#main-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  min-height: 50px;
+  padding: 0 15px;
+  background: $main-color;
+  border-bottom: 1px solid #f1f2f7;
+}
