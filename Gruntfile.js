@@ -31,6 +31,16 @@ module.exports = function(grunt) {
             }
         },
 
+        "overrides":{
+            "bootstrap" : {
+                "main": [
+                    "less/bootstrap.less",
+                    "dist/css/bootstrap.css",
+                    "dist/js/bootstrap.js"
+                ]
+            }
+        },
+
         // Compile the Sass and make nice CSS.
         sass: {
             options: {

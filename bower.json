@@ -26,11 +26,11 @@
     "angular-validation-match": "~1.7.1",
     "angular-filters": "ng-filters#~1.2.0",
     "extras.angular.plus": "~0.9.0",
-    "bootstrap": "v4.0.0-alpha.6",
+    "bootstrap": "4.0",
     "jquery": "~1.9.0",
     "toastr": "~2.0.1",
     "animate-css": "~3.4.0",
     "components-font-awesome": "~4.4.0",
-    "tether-tooltip" : "~1.2.0"
+    "tether-tooltip": "~1.2.0"
   }
 }
