@@ -7,10 +7,14 @@
     angular
         .module('app.layout')
         .controller('Shell', Shell);
-    Shell.$inject = [];
-    function Shell() {
+
+    Shell.$inject = ['$location', '$scope'];
+
+    function Shell($location, $scope) {
         var vmShell = this;
+
         vmShell.sidebarToggled = false;
+        vmShell.location = $location.path();
 
         vmShell.toggleSidebar = toggleSidebar;
 
@@ -44,5 +48,9 @@
                 }, 200);
             }
         }
+
+        $scope.$on("$locationChangeSuccess", function() {
+            vmShell.location = $location.path();
+        });
     }
 })();
