@@ -8,19 +8,30 @@
         .module('app.layout')
         .controller('Shell', Shell);
 
-    Shell.$inject = ['$location', '$scope'];
+    Shell.$inject = ['$location', '$scope', 'sharedServices'];
 
-    function Shell($location, $scope) {
+    function Shell($location, $scope, sharedServices) {
         var vmShell = this;
 
         vmShell.sidebarToggled = false;
         vmShell.location = $location.path();
 
         vmShell.toggleSidebar = toggleSidebar;
+        vmShell.logout = logout;
 
         init();
 
         function init() {
+        }
+
+        function logout() {
+            var modalData = {
+                controllerName: 'Modal.logout',
+                botData: null
+            };
+
+            // Call the modal service.
+            sharedServices.callModal(modalData, null);
         }
 
         function toggleSidebar() {

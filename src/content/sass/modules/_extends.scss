@@ -1,0 +1,30 @@
+// VERTICAL ALIGN
+%vertical-align {
+  @include vendor-prefix(transform, translateY(-50%));
+  position: relative;
+  top: 50%;
+}
+
+// VERTICAL ALIGN RESET
+%vertical-reset {
+  @include vendor-prefix(transform, translateY(0));
+  position: relative;
+  top: auto;
+}
+
+// TITLE OVERFLOW
+%title-overflow {
+  .names,
+  .topics,
+  .emails {
+    @include text-overflow(100%);
+  }
+}
+
+// REMOVE SPIN BUTTON
+// Remove number arrows
+%remove-spin {
+  &[type="number"]::-webkit-inner-spin-button {
+    @include vendor-prefix(appearance, none);
+  }
+}

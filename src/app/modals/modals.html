@@ -1,0 +1,43 @@
+<div modal-view-animator current-view="vm.currentView" offset="132">
+
+    <!-- Modal Header -->
+    <div data-ng-class="{'active': vm.currentView.header == true}" class="modal-header">
+        <!--<a data-ng-hide="vm.previousView == null" data-ng-click="vm.back()" class="back fade-animation ng-hide">
+            <i class="fa fa-chevron-left"></i>
+        </a>-->
+        <button ng-click="vm.cancel()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true"><i class="fa fa-close"></i></span>
+        </button>
+        <div data-ng-if="vm.currentView.header == true">
+            <h4 animate-on-change value="vm.currentView.title" class="modal-title">{{::vm.currentView.title}}</h4>
+        </div>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body adjustable">
+        <div class="modal-body-content">
+
+            <!-- data-ng-class="{'active': view.id == vm.currentView.id, 'previous': view.id == vm.previousView.id}"  -->
+
+            <!-- Modal view -->
+            <perfect-scrollbar suppress-scroll-X="true" data-ng-repeat="view in vm.layoutData.views track by $index"
+                               ng-show="view.id == vm.currentView.id"
+                               id="{{view.id}}"
+                               class="view">
+
+                <!-- Included template -->
+                <div data-ng-include="view.template" id="{{view.name}}" class="template-content"></div>
+
+            </perfect-scrollbar>
+        </div>
+
+    </div>
+
+    <!-- Modal Footer -->
+    <div data-ng-class="{'active': vm.currentView.footer == true}" class="modal-footer">
+        <div data-ng-if="vm.currentView.footer == true">
+            <button ng-click="vm.cancel()" type="button" class="btn btn-default">Cancel</button>
+            <button ng-click="vm.accept()" type="button" class="btn btn-primary">{{vm.layoutData.acceptButton}}</button>
+        </div>
+    </div>
+</div>

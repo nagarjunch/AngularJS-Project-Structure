@@ -1,0 +1,214 @@
+// MODAL DIALOG
+.modal {
+  overflow: hidden;
+  padding: 0 20px;
+
+  .modal-row {
+    margin-left: -40px;
+    margin-right: -40px;
+
+    @include respond(xs) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  .modal-col {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include respond(xs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.modal-dialog {
+  margin: 66px auto 0;
+}
+
+.modal-content {
+  box-shadow: $modal-box-shadow;
+  border: none;
+}
+
+.modal-backdrop.in {
+  @include vendor-prefix(opacity, 0.8);
+  background-color: $white;
+}
+
+.bg-default {
+  background-color: $white;
+}
+
+// MODAL HEADER
+.modal-header {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: $white;
+  border-radius: $base-panel-border-radius $base-panel-border-radius 0 0;
+  border-bottom: 1px solid transparent;
+  min-height: 0;
+  background-color: transparent;
+  border: 0;
+
+  &.active {
+    padding: 30px 15px;
+  }
+
+  .back,
+  .next {
+    @extend %vertical-align;
+    position: absolute;
+    padding: 0 10px;
+    color: $silver-chalice;
+    font-size: $font-lg;
+  }
+
+  .close {
+    @include positioning(absolute, -25px, -25px, none, none);
+
+    font-size: 18px;
+    width: 15px;
+    height: 18px;
+    color: $silver-chalice;
+    text-shadow: none;
+    opacity: 1;
+
+    @include respond(xs) {
+      right: 0;
+    }
+  }
+
+  .modal-title {
+    font-size: 28px;
+    color: $mine-shaft;
+    font-weight: $font-weight-light;
+    text-align: center;
+  }
+}
+
+
+// MODAL BODY
+.modal-body {
+  @include vendor-prefix(transition, height 0.3s 0.1s ease-in-out);
+  padding: 0;
+  border-radius: $base-modal-border-radius;
+  color: $dove-gray;
+  overflow: hidden;
+  min-height: 0;
+
+  &.adjustable {
+    height: 0px;
+  }
+
+  .modal-body-content {
+    padding: 18px 40px;
+    height: 100%;
+
+    @include respond(xs) {
+      padding: 18px 20px;
+    }
+  }
+
+  .view {
+    @include transition(transform, 0.3s, ease-in);
+    @include positioning(absolute, 0, none, none, 0);
+    /*@include vendor-prefix(transform, translateX(100%));*/
+
+    width: 100%;
+    list-style: none;
+    z-index: 10;
+    overflow: hidden;
+
+    .template-content {
+      padding: 0;
+      overflow: inherit;
+      background-color: $white;
+      padding: 40px;
+
+      @include respond(xs) {
+        padding: 20px;
+      }
+    }
+
+    /*&.active {
+        @include vendor-prefix(transform, translateX(0%));
+        z-index: 30;
+    }*/
+
+    /*&.previous {
+        @include vendor-prefix(transform, translateX(-100%));
+        z-index: 20;
+    }*/
+  }
+
+  // Headline text size.
+  .text-headline {
+    font-size: $font-lg;
+    color: $mine-shaft;
+  }
+
+  // Text section margin spacing.
+  .text-section {
+    margin-bottom: 10px;
+  }
+}
+
+// MODAL FOOTER
+.modal-footer {
+  @include transition(height, 0.6s, ease-out);
+
+  padding: 0;
+  margin: 0;
+  background-color: $alabaster;
+  overflow: hidden;
+  border-top: 0;
+  border-radius: 0 0 $base-btn-border-radius $base-btn-border-radius;
+  max-height: 100px;
+
+  @include respond(xxs) {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &.active {
+    padding: 20px 40px;
+  }
+}
+
+// Custom Dialog Body
+.dialog-content {
+  .title {
+    color: #222;
+    font-weight: 300;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .message {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .desc {
+    text-align: center;
+    font-size: 16px;
+  }
+  .symbol {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: $bondi-blue;
+
+    .loading-circle {
+      padding: 10px;
+      width: 55px;
+      margin: 0 auto;
+      @include vendor-prefix(animation, loading infinite 0.5s linear reverse);
+      outline: 1px solid transparent;
+    }
+  }
+}

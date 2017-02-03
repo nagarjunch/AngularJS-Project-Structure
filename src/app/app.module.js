@@ -17,6 +17,8 @@
         'app.mybots',
         'app.botlearning',
         'app.settings',
-        'app.analytics'
+        'app.analytics',
+        'app.modals',
+        'app.util'
     ]);
 })();

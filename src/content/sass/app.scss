@@ -1,5 +1,12 @@
+// Global Modules
 @import "modules/colors";
+@import "modules/variables";
 @import "modules/typography";
+@import "modules/measurements";
+@import "modules/mixins";
 @import "modules/common";
+@import "modules/extends";
+@import "modules/animations";
 
 @import "app/layout/base";
+@import "app/modals/base";

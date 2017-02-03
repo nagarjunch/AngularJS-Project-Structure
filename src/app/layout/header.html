@@ -1,24 +1,20 @@
 <div id="main-header">
-    <div class="row">
-        <div class="col">
-            <ul class="list-inline links-list-lg float-left">
-                <li class="list-inline-item">
-                    <div class="sidebar-toggle-box" ng-click="vmShell.toggleSidebar()">
-                        <div class="fa fa-bars tooltips" data-placement="right"
-                             data-original-title="Toggle Navigation"></div>
-                    </div>
-                </li>
-                <li class="list-inline-item">
-                    <a href="index.html" class="logo">X<span>pro</span></a>
-                </li>
-            </ul>
-        </div>
-        <div class="col col-lg-2">
-            <ul class="list-inline links-list-sm float-right">
-                <li class="list-inline-item sep"></li>
-                <li class="list-inline-item"><a href="/" class="menu-item">
-                    Log Out <i class="fa fa-sign-out right"></i> </a></li>
-            </ul>
-        </div>
-    </div>
+    <ul class="list-inline links-list-lg pull-left">
+        <li class="list-inline-item">
+            <div class="sidebar-toggle-box" ng-click="vmShell.toggleSidebar()">
+                <div class="fa fa-bars tooltips" data-placement="right"
+                     data-original-title="Toggle Navigation"></div>
+            </div>
+        </li>
+        <li class="list-inline-item">
+            <a href="index.html" class="logo">X<span>pro</span></a>
+        </li>
+    </ul>
+
+
+    <ul class="list-inline links-list-sm pull-right">
+        <li class="list-inline-item sep"></li>
+        <li class="list-inline-item" ng-click="vmShell.logout()"><a href="/" class="menu-item">
+            Log Out <i class="fa fa-sign-out right"></i> </a></li>
+    </ul>
 </div>
