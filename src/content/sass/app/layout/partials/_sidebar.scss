@@ -4,6 +4,53 @@
   max-height: 100%;
   width: 280px;
   display: inline-block;
+  overflow: hidden;
+
+  .content {
+    margin-top : 52px;
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    li {
+      position: relative;
+      margin: 0;
+      font-size: 12px;
+      border-bottom: 1px solid rgba(69, 74, 84, 0.7);
+    }
+
+    li.active > a {
+      background-color: #2b303a;
+      color: #fff;
+    }
+
+    li a {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      padding: 10px 15px;
+      color: #aaabae;
+      z-index: 2;
+      -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+      -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+      -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+      transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+
+      .fa{
+        font-size: 15px;
+        width: 15px;
+        height: 15px;
+      }
+
+      .title {
+        margin-left: 20px;
+        font-size: $font-sm;
+      }
+    }
+  }
 }
 
 .mobile#sidebar  {
