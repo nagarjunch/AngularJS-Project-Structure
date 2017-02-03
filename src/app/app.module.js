@@ -13,6 +13,10 @@
     angular.module('app', [
         'app.core',
         'app.layout',
-        'app.directives'
+        'app.directives',
+        'app.mybots',
+        'app.botlearning',
+        'app.settings',
+        'app.analytics'
     ]);
 })();
