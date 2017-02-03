@@ -1,16 +1,8 @@
-<div data-ng-controller="Shell as vmShell">
-    <!-- Perfect scroll to match -->
+<div data-ng-controller="Shell as vmShell" id="shell">
 
-    <div class="scroll-container">
+    <!-- Main Header -->
+    <header data-ng-include="'app/layout/header.html'" id="main-header"></header>
+    <div data-ng-include="'app/layout/sidebar.html'" id="sidebar" ng-class="{mobile : vmShell.sidebarToggled}"></div>
+    <div data-ng-include="'app/layout/content.html'" id="content"></div>
 
-        <!-- Main Header -->
-        <header data-ng-include="'app/layout/header.html'" id="main-header"></header>
-
-        <!-- Main app view / Routing -->
-        <div screen-height data-ng-view id="view-content" class="ng-animate-disabled"></div>
-
-        <!-- Main footer -->
-        <footer data-ng-include="'app/layout/footer.html'" id="main-footer"></footer>
-
-    </div>
 </div>

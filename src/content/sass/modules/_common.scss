@@ -1,10 +1,31 @@
+html {
+  height: 100%;
+}
+
 body {
   color: #797979;
   background: #f1f2f7;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $base-font-family;
   padding: 0px !important;
   margin: 0px !important;
-  font-size: 13px;
+  font-size: $base-font;
+  height:100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+#body-content {
+  height: 100%;
+}
+
+#shell {
+  height: 100%;
+}
+
+.links-list-sm > li.sep {
+  display: inline-block;
+  width: 0px;
+  line-height: $base-line-height;
+  overflow: hidden;
+  margin-left: 10px;
 }

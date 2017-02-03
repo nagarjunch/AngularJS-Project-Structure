@@ -1,0 +1,12 @@
+#sidebar {
+  background-color: $mine-shaft;
+  height: 100%;
+  max-height: 100%;
+  width: 280px;
+  display: inline-block;
+}
+
+.mobile#sidebar  {
+  width: 50px;
+}
+

@@ -6,5 +6,45 @@
   min-height: 50px;
   padding: 0 15px;
   background: $main-color;
-  border-bottom: 1px solid #f1f2f7;
+
+  .links-list-sm {
+    white-space: nowrap;
+    padding-top: 14px;
+  }
+
+  .links-list-lg {
+    white-space: nowrap;
+    padding-top: 14px;
+    margin-bottom: 5px
+  }
+
+  .sidebar-toggle-box {
+    float: left;
+    padding-right: 15px;
+  }
+
+  .sidebar-toggle-box .fa-bars {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  a.logo {
+    font-size: $font-x;
+    color: $text-black;
+    float: left;
+    text-transform: uppercase;
+    line-height: 25px;
+  }
+
+  a.logo span {
+    color: $apple;
+  }
+
+  .menu-item {
+    font-size: 13px;
+    color: $dove-gray;
+    text-decoration: none;
+  }
+
 }

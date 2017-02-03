@@ -10,13 +10,18 @@
     Shell.$inject = [];
     function Shell() {
         var vmShell = this;
+        vmShell.sidebarToggled = false;
 
-        vmShell.test = null;
+        vmShell.toggleSidebar = toggleSidebar;
 
         init();
 
         function init() {
-            vmShell.test = 'init';
+        }
+
+        function toggleSidebar() {
+            console.log("FIRE")
+            vmShell.sidebarToggled = !vmShell.sidebarToggled;
         }
     }
 })();
