@@ -17,7 +17,7 @@
             {
                 name: 'logout',
                 type: 'app',
-                acceptButton: 'accept',
+                acceptButton: 'Logout',
                 views: [
                     {
                         title: 'Logout',
@@ -26,6 +26,21 @@
                         template: 'app/modals/templates/logout.html',
                         header: true,
                         footer: false
+                    }
+                ]
+            },
+            {
+                name: 'createbot',
+                type: 'app',
+                acceptButton: 'Create',
+                views: [
+                    {
+                        title: 'Create Bot',
+                        name: 'createbot',
+                        id: 'm-00',
+                        template: 'app/modals/templates/createbot.html',
+                        header: true,
+                        footer: true
                     }
                 ]
             }

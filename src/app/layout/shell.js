@@ -26,7 +26,7 @@
 
         function logout() {
             var modalData = {
-                controllerName: 'Modal.logout',
+                controllerName: 'Modal.createBot',
                 botData: null
             };
 
