@@ -1,0 +1,307 @@
+// VENDOR PREFIXES
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+
+// RESPONSIVE
+@mixin respond($class) {
+  @if $class==xxxs {
+    @media (max-width: 420px) {
+      @content;
+    }
+  }
+  @else if $class==xxs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+  @else if $class==xsm {
+    @media (max-width: 650px) {
+      @content;
+    }
+  }
+  @else if $class==xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @else if $class==sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $class==md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $class==lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $class==xl {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: xxxs, xxs, xs, sm, md, lg";
+  }
+}
+
+
+// FULL SCREEN LIST
+@mixin full-screen-list($xs: 1, $sm: 2, $md: 3, $lg: 4, $xl: 6) {
+
+  @include respond(xs) {
+    width: (100% / $xs);
+  }
+  @include respond(sm) {
+    width: (100% / $sm);
+  }
+  @include respond(md) {
+    width: (100% / $md);
+  }
+  @include respond(lg) {
+    width: (100% / $lg);
+  }
+  @include respond(xl) {
+    width: (100% / $xl);
+  }
+}
+
+
+// INPUT FORM STYLES
+@mixin input-form-alerts($color) {
+  color: $color;
+  border-color: $color;
+
+  .form-control {
+    color: $color;
+  }
+
+  .btn-icon {
+    color: $color;
+
+    &:hover {
+      color: darken($color, 5%);
+    }
+  }
+}
+
+
+// ADDON DOT
+@mixin addon-dot($size, $font-size, $spacing: 10px) {
+  position: absolute;
+  padding-left: $spacing;
+  margin-left: ($spacing - $size);
+
+  &:before {
+    @include circle($size, $font-size);
+    @extend %vertical-align;
+
+    content: "\f111";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    text-align: right;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+// OVERLAY
+@mixin overlay($color: null) {
+  @include positioning;
+  pointer-events: none;
+  background-color: rgba($white, 0.7);
+
+  @if $color != null {
+    background-color: rgba($color, 0.5);
+  }
+}
+
+
+// BORDER AFTER
+@mixin border-position($position: after, $size: 3px, $color: $link-color, $direction: null) {
+  &:#{$position} {
+    content: "";
+    background-color: $color;
+    z-index: 20;
+
+    @if $direction == "right" {
+      @include positioning(absolute, 0, 0, none, none);
+      height: 100%;
+      width: $size;
+    }
+
+    @else if $direction == "left" {
+      @include positioning(absolute, 0, none, none, 0);
+      height: 100%;
+      width: $size;
+    }
+
+    @else if $direction == "top" {
+      @include positioning(absolute, 0, none, none, 0);
+      height: $size;
+      width: 100%;
+    }
+
+    @else if $direction == "bottom" {
+      @include positioning(absolute, none, none, 0, 0);
+      height: $size;
+      width: 100%;
+    }
+
+    @content;
+  }
+}
+
+
+// POSITIONING
+@mixin positioning($pos: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: $pos;
+
+  @if $top != none {
+    top: $top;
+  }
+  @if $right != none {
+    right: $right;
+  }
+  @if $bottom != none {
+    bottom: $bottom;
+  }
+  @if $left != none {
+    left: $left;
+  }
+}
+
+
+// TRANSITION
+@mixin transition($property:all, $speed:0.3s, $ease:ease-in-out) {
+  @include vendor-prefix(transition, $property $speed $ease);
+}
+
+
+// PLACEHOLDER
+@mixin placeholder($align: null) {
+  &::-webkit-input-placeholder {@content; text-align: $align;};
+  &:-moz-placeholder {@content};
+  &::-moz-placeholder {@content};
+  &:-ms-input-placeholder {@content};
+
+  text-align: $align;
+}
+
+
+// CIRCLE
+@mixin circle($width, $font-size: null) {
+  @if $font-size != null {
+    font-size: $font-size;
+  }
+
+  width: $width;
+  height: $width;
+  line-height: $width;
+  border-radius: 50%;
+}
+
+
+// SQUARE
+@mixin square($width, $font-size: null) {
+  @if $font-size != null {
+    font-size: $font-size;
+  }
+
+  width: $width;
+  height: $width;
+  line-height: $width;
+}
+
+
+// TEXT OVERFLOW
+@mixin text-overflow($max-width: 0) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @if $max-width > 0 {
+    max-width: $max-width;
+  }
+}
+
+// CONTENT MOVER
+@mixin content-mover($num1, $num2, $translate: X) {
+
+  @if $translate == X {
+    @include vendor-prefix(transform, translate($num1, 0));
+
+    &.active {
+      @include vendor-prefix(transform, translate($num2, 0));
+    }
+  }
+
+  @else {
+    @include vendor-prefix(transform, translate(0, $num1));
+
+    &.active {
+      @include vendor-prefix(transform, translate(0, $num2));
+    }
+  }
+}
+
+// FWOOF ANIMATIONS
+@mixin fwoof-animation($name: unique-id(), $direction: "in", $X: 0, $Y: -30px, $Z: 0, $sec: 0.4s, $delay: null) {
+  @include vendor-prefix(animation, animation-#{$name} $sec cubic-bezier(0.5, 0.0, 0.5, 1.0) $delay forwards);
+
+  @include keyframes(animation-#{$name}) {
+
+    @if $direction == "in" {
+      0% {
+        @include vendor-prefix(transform, translate3d($X, $Y, $Z));
+        opacity: 0;
+        visibility: visible;
+      }
+      100% {
+        @include vendor-prefix(transform, translate3d(0, 0, 0));
+        opacity: 1;
+      }
+    }
+
+    @if $direction == "out" {
+      0% {
+        @include vendor-prefix(transform, translate3d(0, 0, 0));
+        opacity: 1;
+      }
+      100% {
+        @include vendor-prefix(transform, translate3d($X, $Y, $Z));
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+// KEYFRAMES
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

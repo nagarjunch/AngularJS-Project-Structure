@@ -2,7 +2,10 @@
 
     <!-- Main Header -->
     <header data-ng-include="'app/layout/header.html'" id="main-header"></header>
-    <div data-ng-include="'app/layout/sidebar.html'" id="sidebar" ng-class="{mobile : vmShell.sidebarToggled}"></div>
-    <div data-ng-include="'app/layout/content.html'" id="content"></div>
+    <div id="main">
+        <div data-ng-include="'app/layout/sidebar.html'" id="sidebar"
+             ng-class="{mobile : vmShell.sidebarToggled}"></div>
+        <div data-ng-include="'app/layout/content.html'" id="content"></div>
+    </div>
 
 </div>

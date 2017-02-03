@@ -25,17 +25,23 @@
             if(vmShell.sidebarToggled) {
                 $( "#sidebar" ).animate({
                     width: "50px"
-                }, 500 );
+                }, 300 );
                 $("ul.sidebar-menu > li > a > span.title").animate({
                     opacity : 0
-                },  500);
+                },  300);
+                setTimeout(function(){
+                    $("ul.sidebar-menu > li > a > span.title").hide();
+                }, 50);
             } else {
                 $( "#sidebar" ).animate({
                     width: "280px"
-                }, 500 );
+                }, 300 );
                 $("ul.sidebar-menu > li > a > span.title").animate({
                     opacity : 1
-                },  500);
+                },  300);
+                setTimeout(function(){
+                    $("ul.sidebar-menu > li > a > span.title").show();
+                }, 200);
             }
         }
     }

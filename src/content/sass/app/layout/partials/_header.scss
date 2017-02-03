@@ -5,7 +5,7 @@
   z-index: 998;
   min-height: 50px;
   padding: 0 15px;
-  background: $main-color;
+  background: $primary-color;
 
   .links-list-sm {
     white-space: nowrap;
@@ -38,7 +38,7 @@
   }
 
   a.logo span {
-    color: $apple;
+    color: $accent-color;
   }
 
   .menu-item {

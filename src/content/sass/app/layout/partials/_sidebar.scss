@@ -1,9 +1,9 @@
 #sidebar {
-  background-color: $mine-shaft;
+  background-color: $secondary-color;
   height: 100%;
   max-height: 100%;
   width: 280px;
-  display: inline-block;
+  float: left;
   overflow: hidden;
 
   .content {
@@ -43,6 +43,10 @@
         font-size: 15px;
         width: 15px;
         height: 15px;
+
+        &.active {
+          color: $accent-color;
+        }
       }
 
       .title {

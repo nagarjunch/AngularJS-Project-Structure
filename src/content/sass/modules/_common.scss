@@ -20,6 +20,12 @@ body {
 
 #shell {
   height: 100%;
+  overflow: hidden;
+}
+
+#main {
+  height: 100%;
+  display: flex;
 }
 
 .links-list-sm > li.sep {
