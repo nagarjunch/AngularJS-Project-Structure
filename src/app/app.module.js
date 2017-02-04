@@ -19,6 +19,7 @@
         'app.settings',
         'app.analytics',
         'app.modals',
-        'app.util'
+        'app.util',
+        'app.botdetails'
     ]);
 })();

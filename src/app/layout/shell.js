@@ -17,6 +17,7 @@
         vmShell.location = $location.path();
 
         vmShell.toggleSidebar = toggleSidebar;
+        vmShell.changePath = changePath;
         vmShell.logout = logout;
 
         init();
@@ -59,6 +60,12 @@
             }
         }
 
+        function changePath(path) {
+            console.log("hii")
+            $location.url(path)
+        }
+
+        // Listeners
         $scope.$on("$locationChangeSuccess", function() {
             vmShell.location = $location.path();
         });
