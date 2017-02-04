@@ -26,8 +26,7 @@
 
         function logout() {
             var modalData = {
-                controllerName: 'Modal.createBot',
-                botData: null
+                controllerName: 'Modal.logout'
             };
 
             // Call the modal service.

@@ -25,7 +25,7 @@
                         id: 'm-00',
                         template: 'app/modals/templates/logout.html',
                         header: true,
-                        footer: false
+                        footer: true
                     }
                 ]
             },

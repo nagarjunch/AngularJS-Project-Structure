@@ -56,3 +56,18 @@ body {
   overflow: hidden;
   margin-left: 10px;
 }
+
+.hex{
+  stroke-width:2;
+  stroke: white;
+  fill-opacity:0.8;
+  transition:fill-opacity .8s;
+}
+svg:hover .hex{
+  fill-opacity:1;
+}
+
+svg {
+  width: $bot-listing-avatar-size-lg;
+  cursor: pointer;
+}
