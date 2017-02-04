@@ -69,5 +69,42 @@ svg:hover .hex{
 
 svg {
   width: $bot-listing-avatar-size-lg;
+  &.sm {
+   width: $bot-listing-avatar-size-sm;
+  }
   cursor: pointer;
+}
+
+.headline {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 13px;
+}
+
+.sub-headline {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 300;
+  //margin-bottom: 30px;
+}
+
+.content-container {
+  margin: 40px auto 0;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 40px;
+
+  @include respond(xs) {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+}
+
+.no-border {
+  border: 0px !important;
+}
+
+.default-margin {
+  margin: 20px 0px;
 }

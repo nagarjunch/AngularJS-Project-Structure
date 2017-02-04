@@ -61,8 +61,7 @@
         }
 
         function changePath(path) {
-            console.log("hii")
-            $location.url(path)
+            $location.url(path);
         }
 
         // Listeners

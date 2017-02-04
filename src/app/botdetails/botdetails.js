@@ -13,7 +13,8 @@
     function BotDetails($routeParams) {
         var vm = this;
 
-        vm.text = $routeParams.name;
+        vm.botName = $routeParams.name;
+        vm.botQuestions = [1,2,3,4,5];
 
         init();
 

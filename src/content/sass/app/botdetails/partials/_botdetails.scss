@@ -1,0 +1,80 @@
+#bot-details{
+  .row {
+    margin-top: 20px !important;
+    border-top: 1px solid #ebebeb;
+  }
+
+  .content {
+    margin: 30px 0px;
+  }
+
+  .thumbnail {
+    padding-bottom : 20px;
+  }
+
+  .question-item {
+    width:100%;
+    min-height: 110px;
+    border-bottom: 1px solid #ebebeb;
+    display: table;
+
+    .question {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .answer {
+      font-weight: 300;
+      font-size: 17px;
+    }
+
+    .question-label {
+      float: right;
+      position: absolute;
+    }
+
+    .left-content {
+      padding: 20px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .mid-content {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .right-content {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .child-hover-btn {
+      visibility: hidden;
+      padding-left: 5px;
+      display: table-cell;
+      vertical-align: middle;
+
+      .info {
+        color: $blue-ribbon;
+        font-size: 18px;
+      }
+
+      .warning {
+        color: $bittersweet;
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      .child-hover-btn {
+        visibility: visible;
+      }
+    }
+  }
+
+  .question-item :hover
+  .hidden {
+    display: block;
+  }
+}
