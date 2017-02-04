@@ -6,11 +6,11 @@
 
     angular
         .module('app.modals')
-        .controller('Modal.createBot', logout);
+        .controller('Modal.createBot', createBot);
 
-    logout.$inject = ['$uibModalInstance', '$window', 'modals', 'viewData', '$scope', '$rootScope'];
+    createBot.$inject = ['$uibModalInstance', '$window', 'modals', 'viewData', '$scope', '$rootScope', '$translator'];
 
-    function logout($uibModalInstance, $window, modals, viewData, $scope, $rootScope) {
+    function createBot($uibModalInstance, $window, modals, viewData, $scope, $rootScope, $translator) {
 
         /* jshint validthis: true */
         var vm = this;
@@ -40,6 +40,19 @@
 
         // Accept the modal.
         function accept() {
+            var url = 'xp.bot.create';
+            var payload = {
+                name: 'xpro',
+                user: 1
+            };
+            $translator.translate(url, {}, payload)
+                .then(function (response) {
+                        console.log(response);
+                    },
+                    function (response) {
+                        console.log(response);
+                    });
+
             $uibModalInstance.close(result);
         }
 

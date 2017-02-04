@@ -7,7 +7,7 @@
 
     var _module = ng.module('app.core');
 
-    _module.factory('$translator', ['$http', '$endpoints', '$util', '$q', function($http, $endpoints, $util, $q) {
+    _module.factory('$translator', ['$http', '$endpoints', '$q', function($http, $endpoints, $q) {
 
         var _regExToParamName = /\:([a-zA-Z]+)/g;
 
@@ -71,7 +71,7 @@
                 _url,
                 _verb,
                 _queryParams,
-                _headers = $util.clone(DEFAULT_HEADERS);
+                _headers = DEFAULT_HEADERS;
 
             // While getting oldsession, getUserProfile will be called with token taken from localStorage
             if (authObj && typeof authObj === 'object') {

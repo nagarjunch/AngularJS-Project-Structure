@@ -94,6 +94,7 @@ module.exports = function(grunt) {
             dist: {
                 files: [
                     { src: ['src/index.html'], dest: 'dist/'},
+                    { src: ['src/app/**/*.html'], dest : 'dist/'},
                     { src: ['src/content/images/**', 'src/content/svg/**'], dest: 'dist/'},
                     { src: ['*'], dest: 'dist/src/fonts/', expand: true, cwd: 'bower_components/components-font-awesome/fonts/'},
                 ]

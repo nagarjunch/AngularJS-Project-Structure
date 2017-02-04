@@ -12,21 +12,20 @@
         var _exports = {};
 
         var API_SERVER_URL =  $location.protocol() + '://' + location.host;
-        var API_URL_VERSION = '1.1';
-        var API_URL_PREFIX = '/api/' + API_URL_VERSION;
+        var API_URL_VERSION = '';
+        var API_URL_PREFIX = '' + API_URL_VERSION;
         var API_FILE_UPLOAD_SERVER_URL = API_SERVER_URL;
 
         var endpoints = {
-            checkIdStatus: API_SERVER_URL + API_URL_PREFIX + '/check_id_status', //GET
+            createBot: API_SERVER_URL + API_URL_PREFIX + '/faq/vijay/bot', //GET
         };
 
         var serviceList = {
 
-           /* 'mp.user.checkIdStatus': {
-                endpoint: endpoints.checkIdStatus,
-                method: 'get',
-                queryParams: ['emailId', 'phoneNo']
-            }*/
+            'xp.bot.create': {
+                endpoint: endpoints.createBot,
+                method: 'post'
+            }
         };
 
         _exports.serviceList = serviceList;
