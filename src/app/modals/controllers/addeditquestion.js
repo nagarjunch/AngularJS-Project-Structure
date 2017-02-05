@@ -46,7 +46,7 @@
 
         // Accept the modal.
         function accept() {
-            $uibModalInstance.close(result);
+            $uibModalInstance.close();
         }
 
         // Cancel the modal.

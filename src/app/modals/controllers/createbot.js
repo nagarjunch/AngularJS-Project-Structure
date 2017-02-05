@@ -17,6 +17,7 @@
         vm.modalName = 'createbot';
         vm.layoutData = null;
         vm.currentView = null;
+        vm.createBotForm = {};
 
         vm.viewData = viewData;
 
@@ -42,7 +43,7 @@
         function accept() {
             var url = 'xp.bot.create';
             var payload = {
-                name: 'xpro',
+                name: vm.createBotForm.name.$modelValue,
                 user: 1
             };
             $translator.translate(url, {}, payload)
@@ -53,7 +54,7 @@
                         console.log(response);
                     });
 
-            $uibModalInstance.close(result);
+            $uibModalInstance.close();
         }
 
         // Cancel the modal.

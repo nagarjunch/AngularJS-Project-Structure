@@ -1,41 +1,37 @@
 <div id="create-bot">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="vm.createBotForm">
         <fieldset>
 
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Name</label>
                 <div class="col-md-12">
-                    <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
+                    <input id="name" name="name" type="text" placeholder="Name" ng-model="name" class="form-control input-md" required="">
 
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="shortDesc">Short Description</label>
+                <label class="col-md-4 control-label" for="description">Description</label>
                 <div class="col-md-12">
-                    <input id="shortDesc" name="shortDesc" type="text" placeholder="Short Description" class="form-control input-md" required="">
-
+                    <input id="description" name="description" type="text" placeholder="Description" ng-model="description" class="form-control input-md" required="">
                 </div>
             </div>
 
             <!-- Textarea -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="longDesc">Long Description</label>
+                <label class="col-md-4 control-label" for="welcomeMessage">Welcome Message</label>
                 <div class="col-md-12">
-                    <textarea class="form-control" id="longDesc" name="longDesc" placeholder="Long Description"></textarea>
+                    <textarea class="form-control" id="welcomeMessage" name="welcomeMessage" ng-model="welcomeMessage" placeholder="Welcome Message"></textarea>
                 </div>
             </div>
 
-            <!-- Select Basic -->
+            <!-- Textarea -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="type">Bot Type</label>
+                <label class="col-md-4 control-label" for="defaultUtterance">Default Utterance</label>
                 <div class="col-md-12">
-                    <select id="type" name="type" class="form-control">
-                        <option value="1">Type 1</option>
-                        <option value="2">Type 2</option>
-                    </select>
+                    <textarea class="form-control" id="defaultUtterance" name="defaultUtterance" ng-model="defaultUtterance" placeholder="Default Utterance"></textarea>
                 </div>
             </div>
 
