@@ -35,7 +35,7 @@
 
 .modal-backdrop.in {
   @include vendor-prefix(opacity, 0.8);
-  background-color: $white;
+  background-color: $mine-shaft;
 }
 
 .bg-default {

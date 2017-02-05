@@ -37,9 +37,9 @@
                 vm.currentView = vm.layoutData.views[0];
 
                 if(viewData && viewData.isEdit) {
-                    vm.currentView.title = "Edit Question"
+                    vm.currentView.title = "Edit Question";
                 } else {
-                    vm.currentView.title = "Add Question"
+                    vm.currentView.title = "Add Question";
                 }
             });
         }

@@ -1,11 +1,16 @@
 <div data-ng-controller="Shell as vmShell" id="shell">
 
+    <div ng-if="!vmShell.isAuthenticated()" ng-style="{height : '100%', width : '100%'}">
+        <div data-ng-include="'app/layout/login.html'" id="login"></div>
+    </div>
     <!-- Main Header -->
-    <header data-ng-include="'app/layout/header.html'" id="main-header"></header>
-    <div id="main">
-        <div data-ng-include="'app/layout/sidebar.html'" id="sidebar"
-             ng-class="{mobile : vmShell.sidebarToggled}"></div>
-        <div data-ng-include="'app/layout/content.html'" id="content"></div>
+    <div ng-if="vmShell.isAuthenticated()" ng-style="{height : '100%'}">
+        <header data-ng-include="'app/layout/header.html'" id="main-header"></header>
+        <div id="main">
+            <div data-ng-include="'app/layout/sidebar.html'" id="sidebar"
+                 ng-class="{mobile : vmShell.sidebarToggled}"></div>
+            <div data-ng-include="'app/layout/content.html'" id="content"></div>
+        </div>
     </div>
 
 </div>

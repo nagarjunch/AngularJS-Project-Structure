@@ -37,7 +37,7 @@
         $locationProvider.html5Mode(true);
 
         // Allow for animation to be turned off.
-        $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
+        //$animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
 
         // Configure the common route provider
         routehelperConfigProvider.config.$routeProvider = $routeProvider;

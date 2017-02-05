@@ -8,9 +8,9 @@
         .module('app.layout')
         .controller('Shell', Shell);
 
-    Shell.$inject = ['$location', '$scope', 'sharedServices'];
+    Shell.$inject = ['$location', '$scope', 'sharedServices', 'security'];
 
-    function Shell($location, $scope, sharedServices) {
+    function Shell($location, $scope, sharedServices, security) {
         var vmShell = this;
 
         vmShell.sidebarToggled = false;
@@ -19,6 +19,7 @@
         vmShell.toggleSidebar = toggleSidebar;
         vmShell.changePath = changePath;
         vmShell.logout = logout;
+        vmShell.isAuthenticated = isAuthenticated;
 
         init();
 
@@ -65,6 +66,10 @@
 
         function changePath(path) {
             $location.url(path);
+        }
+
+        function isAuthenticated() {
+            return security.isAuthenticated();
         }
 
         // Listeners
