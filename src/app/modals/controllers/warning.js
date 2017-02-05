@@ -6,15 +6,15 @@
 
     angular
         .module('app.modals')
-        .controller('Modal.logout', logout);
+        .controller('Modal.warning', warning);
 
-    logout.$inject = ['$uibModalInstance', '$window', 'modals', 'viewData', '$scope', '$rootScope'];
+    warning.$inject = ['$uibModalInstance', '$window', 'modals', 'viewData', '$scope', '$rootScope'];
 
-    function logout($uibModalInstance, $window, modals, viewData, $scope, $rootScope) {
+    function warning($uibModalInstance, $window, modals, viewData, $scope, $rootScope) {
 
         /* jshint validthis: true */
         var vm = this;
-        vm.modalName = 'logout';
+        vm.modalName = 'warning';
         vm.layoutData = null;
         vm.currentView = null;
 

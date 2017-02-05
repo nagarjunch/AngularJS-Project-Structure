@@ -14,7 +14,10 @@
                     <div class="items-container">
                         <div ng-repeat="i in vm.botQuestions" class="question-item">
                             <div class="left-content">
-                                <div class="fa fa-question question-label"></div>
+                                <div>
+                                    <div class="question-label">
+                                        <i class="fa fa-question"></i>
+                                    </div>
                                 <svg class="sm" viewbox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <pattern id="img-{{i}}" patternUnits="userSpaceOnUse" width="100" height="100">
@@ -25,6 +28,7 @@
                                     <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25"
                                              fill="url(#img-{{i}})"/>
                                 </svg>
+                                </div>
                             </div>
                             <div class="mid-content">
                                 <div class="question">
@@ -38,12 +42,12 @@
                             </div>
                             <div class="right-content">
                                 <div class="child-hover-btn">
-                                    <button type="button" class="close info" ng-click=""><i
+                                    <button type="button" class="close info" ng-click="vm.editQuestion()"><i
                                             class="fa fa-edit"></i>
                                     </button>
                                 </div>
                                 <div class="child-hover-btn">
-                                    <button type="button" class="close warning" ng-click=""><i
+                                    <button type="button" class="close warning" ng-click="vm.deleteQuestion()"><i
                                             class="fa fa-trash"></i>
                                     </button>
                                 </div>
@@ -57,7 +61,7 @@
                             <span>Add New Utterances</span>
                         </div>
                         <div class="col-xs-12 col-md-12 text-center default-margin">
-                            <button class="btn btn-info center-block" href="/botdetail">Add New</button>
+                            <button class="btn btn-info center-block" ng-click="vm.addQuestion()">Add New</button>
                         </div>
                     </div>
                 </div>

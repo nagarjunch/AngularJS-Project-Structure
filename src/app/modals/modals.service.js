@@ -15,15 +15,15 @@
         // The available modal layouts.
         var modalLayout = [
             {
-                name: 'logout',
+                name: 'warning',
                 type: 'app',
-                acceptButton: 'Logout',
+                acceptButton: 'Yes',
                 views: [
                     {
-                        title: 'Logout',
-                        name: 'logout',
+                        title: 'Warning',
+                        name: 'warning',
                         id: 'm-00',
-                        template: 'app/modals/templates/logout.html',
+                        template: 'app/modals/templates/warning.html',
                         header: true,
                         footer: true
                     }
@@ -39,6 +39,21 @@
                         name: 'createbot',
                         id: 'm-00',
                         template: 'app/modals/templates/createbot.html',
+                        header: true,
+                        footer: true
+                    }
+                ]
+            },
+            {
+                name: 'addeditquestion',
+                type: 'app',
+                acceptButton: 'Save',
+                views: [
+                    {
+                        title: 'Add Question',
+                        name: 'addeditquestion',
+                        id: 'm-00',
+                        template: 'app/modals/templates/addeditquestion.html',
                         header: true,
                         footer: true
                     }

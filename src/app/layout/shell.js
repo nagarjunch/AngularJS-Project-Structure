@@ -27,7 +27,10 @@
 
         function logout() {
             var modalData = {
-                controllerName: 'Modal.logout'
+                controllerName: 'Modal.warning',
+                viewData: {
+                    message: 'Are you sure you wish to logout?'
+                }
             };
 
             // Call the modal service.
