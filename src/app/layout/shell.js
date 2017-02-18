@@ -44,20 +44,20 @@
             if(vmShell.sidebarToggled) {
                 $( "#sidebar" ).animate({
                     width: "50px"
-                }, 300 );
+                }, 200 );
                 $("ul.sidebar-menu > li > a > span.title").animate({
                     opacity : 0
-                },  300);
+                },  50);
                 setTimeout(function(){
                     $("ul.sidebar-menu > li > a > span.title").hide();
                 }, 50);
             } else {
                 $( "#sidebar" ).animate({
                     width: "280px"
-                }, 300 );
+                }, 200 );
                 $("ul.sidebar-menu > li > a > span.title").animate({
                     opacity : 1
-                },  300);
+                },  200);
                 setTimeout(function(){
                     $("ul.sidebar-menu > li > a > span.title").show();
                 }, 200);
