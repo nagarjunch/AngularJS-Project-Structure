@@ -43,8 +43,8 @@
 
             if(vmShell.sidebarToggled) {
                 $( "#sidebar" ).animate({
-                    width: "50px"
-                }, 200 );
+                    width: "55px"
+                }, 200 )
                 $("ul.sidebar-menu > li > a > span.title").animate({
                     opacity : 0
                 },  50);
