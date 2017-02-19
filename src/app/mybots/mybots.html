@@ -3,14 +3,14 @@
     <div class="row">
             <div class="pull-left title">My Bots</div>
             <div class="pull-right">
-                <button class="button button--main button--border-thick button--text-upper button--size-s">Create New Bot</button>
+                <button class="button button--main button--border-thick button--text-upper button--size-s" ng-click="vm.createBot()">Create New Bot</button>
             </div>
     </div>
 
     <div class="row">
 
         <div class="bot-item col-xs-12 col-lg-3 col-sm-4" ng-repeat="i in vm.myBots">
-            <figure class="hover-effect">
+            <figure class="hover-effect" ng-click="vmShell.changePath('/botdetails/' + i)">
                 <img src="/content/images/bot-dummy.png"/>
                 <figcaption>
                     <h2>Lonely <span>Steve</span></h2>
