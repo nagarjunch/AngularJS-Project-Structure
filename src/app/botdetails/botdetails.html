@@ -2,6 +2,30 @@
 
     <div class="row">
         <div class="content-container">
+            <div class="bot-logo">
+                <img src="/content/images/bot-dummy.png"/>
+            </div>
+            <div class="main-details">
+                <div class="headline">
+                    <span class="bot-name">Bot Name</span>
+                    <i class="fa fa-pencil child-hover-btn info" data-toggle="tooltip" data-placement="bottom" title="edit"></i>
+                    <i class="fa fa-trash child-hover-btn warning" data-toggle="tooltip" data-placement="bottom" title="delete"></i>
+                </div>
+                <div class="sub-headline">
+                    <span class="bot-name">FAQ</span>
+                </div>
+                <p>Publish the bot to make it available blah blah</p>
+                <button class="button button--main button--border-thick button--text-upper button--size-s">Publish
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="content-container">
             <div class="headline">
                 <span>Question & Answers</span>
             </div>
@@ -18,16 +42,18 @@
                                     <div class="question-label">
                                         <i class="fa fa-question"></i>
                                     </div>
-                                <svg class="sm" viewbox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <pattern id="img-{{i}}" patternUnits="userSpaceOnUse" width="100" height="100">
-                                            <image xlink:href="/content/images/bot-dummy.png"
-                                                   x="-25" width="150" height="100"/>
-                                        </pattern>
-                                    </defs>
-                                    <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25"
-                                             fill="url(#img-{{i}})"/>
-                                </svg>
+                                    <svg class="sm" viewbox="0 0 100 100" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <pattern id="img-{{i}}" patternUnits="userSpaceOnUse" width="100"
+                                                     height="100">
+                                                <image xlink:href="/content/images/bot-dummy.png"
+                                                       x="-25" width="150" height="100"/>
+                                            </pattern>
+                                        </defs>
+                                        <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25"
+                                                 fill="url(#img-{{i}})"/>
+                                    </svg>
                                 </div>
                             </div>
                             <div class="mid-content">
